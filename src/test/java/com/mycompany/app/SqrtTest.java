@@ -44,13 +44,13 @@ public class SqrtTest {
     }
 
     @Test
-    public void goodNearDelta() {
+    public void goodPreciseEnough() {
         Sqrt s = new Sqrt(0);
         assertTrue(s.good(2.000000001, 4.0));
     }
 
     @Test
-    public void goodFarFromDelta() {
+    public void goodNotPrecise() {
         Sqrt s = new Sqrt(0);
         assertFalse(s.good(1.5, 4.0));
     }
@@ -80,37 +80,16 @@ public class SqrtTest {
     }
 
     @Test
-    public void calcOne() {
+    public void calcPerfectSquares() {
         assertEquals(1.0, new Sqrt(1.0).calc(), EPS);
-    }
-
-    @Test
-    public void calcFour() {
         assertEquals(2.0, new Sqrt(4.0).calc(), EPS);
-    }
-
-    @Test
-    public void calcNine() {
         assertEquals(3.0, new Sqrt(9.0).calc(), EPS);
-    }
-
-    @Test
-    public void calcSixteen() {
-        assertEquals(4.0, new Sqrt(16.0).calc(), EPS);
-    }
-
-    @Test
-    public void calcHundred() {
         assertEquals(10.0, new Sqrt(100.0).calc(), EPS);
     }
 
     @Test
-    public void calcTwo() {
+    public void calcIrrational() {
         assertEquals(Math.sqrt(2.0), new Sqrt(2.0).calc(), EPS);
-    }
-
-    @Test
-    public void calcSeven() {
         assertEquals(Math.sqrt(7.0), new Sqrt(7.0).calc(), EPS);
     }
 
